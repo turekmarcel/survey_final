@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fdfdfd;
+}
+
+.step-content {
+    display: none;
+}
+
+.current {
+    display: block;
+}
+
+.button-section {
+    margin: 0 auto 15px;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        width: 125px;
+        padding: 15px;
+        // background: #b9a082;
+        text-align: center;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 20px auto 0;
+        cursor: pointer;
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        width: 300px;
+
+        &:hover {
+            background: #968065;
+            color: white;
+        }
+    }
+
+    .btn {
+        background-color: #b9a082;
+    }
+
+    .btnSumbit{
+        background-color: #9d1f36;
+
+    }
+
+    .back {
+        background-color: transparent;
+        color: #272727;
+        border: 1px solid #b9a082;
+    }
+}
+
+
+
+.row {
+    display: flex;
+    height: 100vh;
+
+    .left-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        height: 100%;
+        background: rgb(179, 39, 70);
+        background: radial-gradient(circle, rgba(179, 39, 70, 1) 19%, rgba(125, 25, 47, 1) 80%, rgba(117, 23, 41, 1) 100%);
+        box-shadow: 2px 0px 4px 0px rgb(43, 43, 43);
+
+        .logo {
+            width: 250px;
+        }
+    }
+
+    .right-column {
+        display: flex;
+        justify-content: center;
+        flex: 2;
+        
+
+        // background-color: blue;
+
+        .survey-form {
+            display: flex;
+            flex-direction: column;
+
+            width: 90%;
+            margin: 0 auto;
+
+            // background-color: red;
+
+            .form-width {
+                width: 300px;
+            }
+
+            .step-content {
+                margin: auto;
+                max-width: 600px;
+
+                // STANDARD FORM
+                input,
+                select {
+                    width: 300px;
+                    height: 40px;
+                    margin: 4px auto 20px;
+                    padding-left: 15px;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    border: none;
+                    outline: none;
+                    background-color: #f6f6f6;
+                    border: 1px solid rgb(197, 197, 197);
+                    transition: 0.4s;
+
+                    &:focus {
+                        border: 1px solid #565656;
+                    }
+                }
+
+                label {
+                    color: black;
+                }
+
+                // STEP ONE
+                .gender-section {
+                    position: relative;
+
+                    p {
+                        margin-bottom: 12px;
+                    }
+
+                    label {
+                        font-size: 14px;
+                    }
+
+                    input[type="radio"] {
+                        width: 10px;
+                        height: 10px;
+                        transform: scale(1.5);
+                    }
+                }
+
+            }
+
+            .fields-img {
+
+                ul {
+                    // display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    list-style-type: none;
+                    text-align: center;
+                    
+                }
+
+                li {
+                    display: inline-block;
+                    margin: 0 20px;
+                }
+
+                input[type="checkbox"][id^="pickImage"] {
+                    display: none;
+                }
+
+                label {
+                    border: 1px solid #e8e8e8;
+                    background-color: #fff;
+                    padding: 10px;
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    margin: 10px auto;
+                    cursor: pointer;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                label::before {
+                    background-color: white;
+                    color: white;
+                    content: " ";
+                    display: block;
+                    border-radius: 50%;
+                    border: 1px solid #b9a082;
+                    position: absolute;
+                    top: -5px;
+                    left: -5px;
+                    width: 25px;
+                    height: 25px;
+                    text-align: center;
+                    line-height: 28px;
+                    transition-duration: 0.4s;
+                    transform: scale(0);
+                }
+
+                label img {
+                    height: auto;
+                    width: 100px;
+                    transition-duration: 0.2s;
+                    transform-origin: 50% 50%;
+                }
+
+                :checked+label {
+                    border-color: #b9a082;
+                }
+
+                :checked+label::before {
+                    content: "✓";
+                    background-color: #9d1f36;
+                    transform: scale(1);
+                }
+
+                :checked+label img {
+                    transform: scale(0.9);
+
+                    z-index: -1;
+                }
+
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .row{
+        flex-direction: column;
+        
+
+        .left-column{
+           
+
+            .logo{
+                width: 200px;
+            }
+        }
+
+        .right-column{
+            height: 50%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+    }
+}
